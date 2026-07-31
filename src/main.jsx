@@ -10,48 +10,71 @@ import './profile-presence.css';
 const roles = [
   {
     company: 'Securonix', logoDomain: 'securonix.com', initials: 'SX', role: 'Senior Staff Engineer', period: 'Nov 2020 — Present', location: 'Pune, India',
-    tags: ['Security', 'Kafka', 'Kubernetes'],
+    tags: ['Spring Boot', 'Microservices', 'Spring Cloud', 'Event Driven Architecture', 'Distributed Systems', 'Redis', 'AWS', 'Docker', 'Security', 'Kafka', 'Kubernetes'],
     intro: 'Leading architecture and delivery for a SOAR platform trusted by enterprise security teams globally.',
     wins: ['Designed services processing 1M–5M security events daily at sub-second latency.', 'Improved API response time 5× with Redis caching, while reducing database read load by 60%.', 'Created 90+ connector integrations and a Python SDK that cut onboarding from 4 weeks to under 3 days.', 'Mentored 8+ engineers and accelerated delivery through AI-assisted engineering practices.']
   },
   {
     company: 'Citicorp Services India', logoDomain: 'citigroup.com', initials: 'C', role: 'Officer, Software Engineer', period: 'Sep 2018 — Nov 2020', location: 'Pune, India',
-    tags: ['Fintech', 'Spring Boot', 'Elasticsearch'],
+    tags: ['Fintech', 'Spring Boot', 'Microservices', 'Spring Cloud', 'Elasticsearch'],
     intro: 'Built core data infrastructure connecting financial reference data to global Citi systems.',
     wins: ['Built ingestion pipelines processing 10K+ reference data updates each day.', 'Reduced data-quality incident resolution from 4+ hours to under 15 minutes with live analytics.', 'Delivered APIs for 5–10 downstream systems with <200ms p95 latency at 500 requests/second.']
   },
   {
     company: 'Synechron', logoDomain: 'synechron.com', initials: 'S', role: 'Senior Associate, Software Engineer', period: 'Jul 2017 — Sep 2018', location: 'Pune, India',
-    tags: ['Trading', 'MongoDB', 'PCF'],
+    tags: ['Spring Boot', 'Microservices', 'Spring Cloud', 'Trading', 'MongoDB', 'PCF'],
     intro: 'Architected trading middleware for real-time order placement between Bloomberg and HSBC.',
     wins: ['Supported 500+ concurrent traders and 5K+ daily transactions at <500ms confirmation latency.', 'Developed live Angular dashboards for positions and cash-balance monitoring.', 'Helped lower post-release defects by 35% through stronger review practices.']
   },
   {
     company: 'Cognizant', logoDomain: 'cognizant.com', initials: 'C', role: 'Associate, Java Developer', period: 'May 2016 — Jul 2017', location: 'Mumbai, India',
-    tags: ['Enterprise', 'Mule ESB', 'Cassandra'],
-    intro: 'Delivered a configurable tax platform spanning complex regulatory workflows across 13 countries.',
+    tags: ['Enterprise', 'Mule ESB', 'Cassandra', 'IBM MQ', 'Active MQ', 'Drools', 'Java', 'Spring Boot'],
+    intro: 'Architected multi-country Tax Computation Engine supporting tax initiation, approval, and payment workflows across 13 countries,',
     wins: ['Implemented resilient integrations with 99.9% message-delivery reliability.', 'Reduced tax computation processing time by 50% with configurable Drools rules.', 'Maintained zero production audit failures across local tax authority requirements.']
   },
   {
     company: 'Cylsys Software Solutions', logoDomain: 'cylsys.com', initials: 'CY', role: 'Java Developer', period: 'Mar 2013 — Apr 2016', location: 'Mumbai, India',
     tags: ['CRM', 'Solr', 'Full stack'],
     intro: 'Built real-estate CRM platforms used by more than 100 clients.',
-    wins: ['Developed full sales-lifecycle features across 5K+ property inventories.', 'Reduced property search latency from 3+ seconds to under 500ms with Solr indexing.']
+    wins: ['Developed full sales-lifecycle features across 5K+ property inventories.', 'Reduced property search latency from 3+ seconds to under 500ms with Solr indexing.', 'Delivered features supporting end-to-end sales lifecycle: lead management, property viewing scheduling, offer management, and transaction closure across multiple user roles (brokers, agents, buyers).']
   }
 ];
 
 const skills = [
   ['Architecture', ['Distributed Systems', 'Microservices', 'Event-driven', 'CQRS', 'System Design']],
-  ['Engineering', ['Java', 'Spring Boot', 'Python', 'FastAPI', 'JavaScript']],
-  ['Data & messaging', ['Apache Kafka', 'Redis', 'PostgreSQL', 'MongoDB', 'Elasticsearch']],
+  ['Engineering', ['AI', 'Agentic AI', 'LLM', 'RAG', 'Java', 'Spring Boot', 'Python', 'FastAPI', 'JavaScript', 'React js', 'Angular']],
+  ['Data & messaging', ['Apache Kafka', 'Redis', 'PostgreSQL', 'MongoDB', 'Elasticsearch', 'MySQL']],
   ['Cloud & delivery', ['AWS', 'Kubernetes', 'Docker', 'Jenkins', 'CI/CD']]
 ];
 
 const skillIcons = {
-  'Distributed Systems': ['apachekafka', 'DS', '231F20', null], 'Microservices': ['springboot', 'µS', '6DB33F', 'https://spring.io/microservices'], 'Event-driven': ['apachekafka', 'EV', '231F20', 'https://kafka.apache.org/documentation/'], 'CQRS': ['eventstore', 'CQ', '5C2D91', 'https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs'], 'System Design': ['diagramsdotnet', 'SD', 'F08705', null],
-  'Java': ['openjdk', 'J', 'ED8B00', 'https://docs.oracle.com/en/java/'], 'Spring Boot': ['springboot', 'SB', '6DB33F', 'https://docs.spring.io/spring-boot/'], 'Python': ['python', 'Py', '3776AB', 'https://docs.python.org/3/'], 'FastAPI': ['fastapi', 'FA', '009688', 'https://fastapi.tiangolo.com/'], 'JavaScript': ['javascript', 'JS', 'F7DF1E', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'],
-  'Apache Kafka': ['apachekafka', 'K', '231F20', 'https://kafka.apache.org/documentation/'], 'Redis': ['redis', 'R', 'DC382D', 'https://redis.io/docs/latest/'], 'PostgreSQL': ['postgresql', 'PG', '4169E1', 'https://www.postgresql.org/docs/'], 'MongoDB': ['mongodb', 'M', '47A248', 'https://www.mongodb.com/docs/'], 'Elasticsearch': ['elasticsearch', 'ES', '005571', 'https://www.elastic.co/guide/'],
-  'AWS': ['amazonaws', 'AWS', 'FF9900', 'https://docs.aws.amazon.com/'], 'Kubernetes': ['kubernetes', 'K8s', '326CE5', 'https://kubernetes.io/docs/'], 'Docker': ['docker', 'D', '2496ED', 'https://docs.docker.com/'], 'Jenkins': ['jenkins', 'J', 'D24939', 'https://www.jenkins.io/doc/'], 'CI/CD': ['githubactions', 'CI', '2088FF', 'https://docs.github.com/en/actions']
+  'Distributed Systems': ['apachekafka', 'DS', '231F20', null], 
+  'Microservices': ['springboot', 'µS', '6DB33F', 'https://spring.io/microservices'], 
+  'Event-driven': ['apachekafka', 'EV', '231F20', 'https://kafka.apache.org/documentation/'], 
+  'CQRS': ['eventstore', 'CQ', '5C2D91', 'https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs'], 
+  'System Design': ['diagramsdotnet', 'SD', 'F08705', null],
+  'Java': ['openjdk', 'J', 'ED8B00', 'https://docs.oracle.com/en/java/'], 
+  'Spring Boot': ['springboot', 'SB', '6DB33F', 'https://docs.spring.io/spring-boot/'], 
+  'Python': ['python', 'Py', '3776AB', 'https://docs.python.org/3/'], 
+  'FastAPI': ['fastapi', 'FA', '009688', 'https://fastapi.tiangolo.com/'], 
+  'JavaScript': ['javascript', 'JS', 'F7DF1E', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'],
+  'React js': ['react', 'R', '61DAFB', 'https://reactjs.org/'], 
+  'Angular': ['angular', 'A', 'DD0031', 'https://angular.io/'],
+  'Apache Kafka': ['apachekafka', 'K', '231F20', 'https://kafka.apache.org/documentation/'], 
+  'Redis': ['redis', 'R', 'DC382D', 'https://redis.io/docs/latest/'], 
+  'PostgreSQL': ['postgresql', 'PG', '4169E1', 'https://www.postgresql.org/docs/'], 
+  'MongoDB': ['mongodb', 'M', '47A248', 'https://www.mongodb.com/docs/'], 
+  'Elasticsearch': ['elasticsearch', 'ES', '005571', 'https://www.elastic.co/guide/'],
+  'AWS': ['amazonaws', 'AWS', 'FF9900', 'https://docs.aws.amazon.com/'], 
+  'Kubernetes': ['kubernetes', 'K8s', '326CE5', 'https://kubernetes.io/docs/'], 
+  'Docker': ['docker', 'D', '2496ED', 'https://docs.docker.com/'], 
+  'Jenkins': ['jenkins', 'J', 'D24939', 'https://www.jenkins.io/doc/'], 
+  'CI/CD': ['githubactions', 'CI', '2088FF', 'https://docs.github.com/en/actions'],
+  'MySQL': ['mysql', 'My', '4479A1', 'https://dev.mysql.com/doc/'],
+  'AI': ['anthropic', 'AI', '412991', 'https://platform.openai.com/docs/'],
+  'Agentic AI': ['anthropic', 'AA', '2D3047', 'https://www.anthropic.com/'], 
+  'LLM': ['huggingface', 'LLM', 'FF6A13', 'https://huggingface.co/'], 
+  'RAG': ['langchain', 'RAG', '25A8F3', 'https://python.langchain.com/']
 };
 
 function CompanyLogo({ role }) {
