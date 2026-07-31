@@ -1,0 +1,8 @@
+.quick-contact { display:flex; gap:6px; align-items:center; }
+.quick-contact a { display:flex; align-items:center; gap:5px; border:1px solid var(--line); border-radius:20px; padding:5px 9px; color:#d6e5f2; background:rgba(255,255,255,.04); font:10px var(--mono); text-decoration:none; transition:transform .2s, background .2s; }
+.quick-contact a:hover { transform:translateY(-2px); background:rgba(117,214,255,.15); }
+.quick-contact a:last-child { color:#bff5d0; border-color:rgba(87,218,135,.38); background:rgba(64,174,107,.12); }
+.quick-contact .contact-icon{width:14px;height:14px;display:grid;place-items:center}.quick-contact .contact-icon svg,.quick-contact .contact-icon img{width:14px;height:14px;display:block}.quick-contact i { font-style:normal; }
+:root[data-theme="light"] .quick-contact a { color:#193c59; background:#fff; border-color:rgba(23,61,93,.16); }
+:root[data-theme="light"] .quick-contact a:last-child { color:#12683b; background:#e2f7ea; border-color:#b9e7cd; }
+@media(max-width:760px){.nav-actions{gap:6px}.quick-contact i,.theme-toggle i{display:none}.quick-contact a{width:32px;height:32px;padding:0;justify-content:center}.quick-contact .contact-icon,.quick-contact .contact-icon svg,.quick-contact .contact-icon img{width:16px;height:16px}.quick-contact{gap:4px}.theme-toggle{width:32px;height:32px;padding:0;justify-content:center}.theme-toggle span{width:21px;height:21px}}

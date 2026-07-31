@@ -1,0 +1,4 @@
+.company-logo{width:50px;height:50px;flex:0 0 50px;border-radius:10px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.16)}
+.company-logo img{width:36px;height:36px;object-fit:contain}.company-logo b{display:none;font:700 11px var(--mono);color:#173b5a}.company-logo.logo-fallback b{display:grid}.role-title{display:flex;align-items:center;gap:16px}.role-title .company-logo{width:64px;height:64px;flex-basis:64px;border-radius:12px}.role-title .company-logo img{width:46px;height:46px}
+:root[data-theme="light"] .company-logo{box-shadow:0 2px 8px rgba(18,53,79,.12)}
+@media(max-width:760px){.company-logo{width:42px;height:42px;flex-basis:42px}.company-logo img{width:30px;height:30px}.role-title .company-logo{width:52px;height:52px;flex-basis:52px}.role-title .company-logo img{width:37px;height:37px}}
